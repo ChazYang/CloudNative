@@ -17,27 +17,27 @@ box: golang
     # - mongo
     # https://devcenter.wercker.com/administration/services/examples/mongodb/
 
-dev:
-  steps:
-    - setup-go-workspace:
-        package-dir: github.com/ChazYang/CloudNative
+# dev:
+#   steps:
+#     - setup-go-workspace:
+#         package-dir: github.com/ChazYang/CloudNative
     
-    - script:
-        name: env
-        code: env
+#     - script:
+#         name: env
+#         code: env
     
-    - script:
-        name: go get
-        code: |
-          cd $WERCKER_SOURCE_DIR
-          go version
-          go get -u github.com/Masterminds/glide
-          export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
-          glide install
+#     - script:
+#         name: go get
+#         code: |
+#           cd $WERCKER_SOURCE_DIR
+#           go version
+#           go get -u github.com/Masterminds/glide
+#           export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
+#           glide install
     
-    - internal/watch:
-        code: go run main.go
-        reload: true
+#     - internal/watch:
+#         code: go run main.go
+#         reload: true
 
 build:
   # The steps that will be executed on build
@@ -65,7 +65,7 @@ build:
         name: go build
         code: |
           export GO111MODULE=auto
-          go build -o CloudNative main.go
+          go build
 
     # Test the project
     - script:
@@ -85,7 +85,7 @@ deploy:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         cmd: /pipeline/source/CloudNative
-        # port: "8080"
+        port: "3000"
         tag: latest
         repository: yangcz/CloudNative
         # registry: https://registry.hub.docker.com
