@@ -36,10 +36,10 @@ build:
     - script:
         name: go build
         code: |
-          go build main.go
+          go build
 
     # Test the project
     - script:
         name: go test
         code: |
-          go test main.go
+          go test
