@@ -32,7 +32,7 @@ dev:
           cd $WERCKER_SOURCE_DIR
           go version
           go get -u github.com/Masterminds/glide
-          expert PATH=$WERCKER_SOURCE_DIR/bin:$PATH
+          export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
           glide install
     
     - internal/watch:
@@ -57,7 +57,7 @@ build:
           cd $WERCKER_SOURCE_DIR
           go version
           go get -u github.com/Masterminds/glide
-          expert PATH=$WERCKER_SOURCE_DIR/bin:$PATH
+          export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
           glide install
 
     # Build the project
@@ -85,6 +85,7 @@ deploy:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         cmd: /pipeline/source/CloudNative
+        port: "8080"
         tag: latest
         repository: yangcz/CloudNative
         registry: https://registry.hub.docker.com
