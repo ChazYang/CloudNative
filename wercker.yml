@@ -85,7 +85,7 @@ deploy:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         cmd: /pipeline/source/CloudNative
-        port: "8080"
+        # port: "8080"
         tag: latest
         repository: yangcz/CloudNative
-        registry: https://registry.hub.docker.com
+        # registry: https://registry.hub.docker.com
