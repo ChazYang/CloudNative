@@ -71,9 +71,9 @@ build:
     
     # Copy file to wercker output dir
     - script:
-      name: copy file
-      code: | 
-        cp -R ./ ${WERCKER_OUTPUT_DIR}
+        name: copy file
+        code: | 
+          cp -R ./ ${WERCKER_OUTPUT_DIR}
 
 deploy:
   steps:
