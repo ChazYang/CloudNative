@@ -18,6 +18,7 @@ build:
     - script:
         name: go build
         code: |
+          export GO111MODULE=auto
           go build
 
     - script:
