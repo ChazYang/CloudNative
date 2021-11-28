@@ -20,24 +20,24 @@ box: golang
 dev:
   steps:
     - setup-go-workspace:
-      package-dir: github.com/ChazYang/CloudNative
+        package-dir: github.com/ChazYang/CloudNative
     
     - script:
-      name: env
-      code: env
+        name: env
+        code: env
     
     - script:
-      name: go get
-      code: |
-        cd $WERCKER_SOURCE_DIR
-        go version
-        go get -u github.com/Masterminds/glide
-        expert PATH=$WERCKER_SOURCE_DIR/bin:$PATH
-        glide install
+        name: go get
+        code: |
+          cd $WERCKER_SOURCE_DIR
+          go version
+          go get -u github.com/Masterminds/glide
+          expert PATH=$WERCKER_SOURCE_DIR/bin:$PATH
+          glide install
     
     - internal/watch:
-      code: go run main.go
-      reload: true
+        code: go run main.go
+        reload: true
 
 build:
   # The steps that will be executed on build
@@ -48,13 +48,17 @@ build:
     # Sets the go workspace and places you package
     # at the right place in the workspace tree
     - setup-go-workspace:
-      package-dir: github.com/ChazYang/CloudNative
+        package-dir: github.com/ChazYang/CloudNative
 
     # Gets the dependencies
     - script:
         name: go get
         code: |
-          # go get
+          cd $WERCKER_SOURCE_DIR
+          go version
+          go get -u github.com/Masterminds/glide
+          expert PATH=$WERCKER_SOURCE_DIR/bin:$PATH
+          glide install
 
     # Build the project
     - script:
