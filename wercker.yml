@@ -78,9 +78,9 @@ build:
 deploy:
   steps:
     - internal/docker-push:
-      username: $DOCKER_USERNAME
-      password: $DOCKER_PASSWORD
-      cmd: /pipeline/source/CloudNative
-      tag: latest
-      repository: yangcz/CloudNative
-      registry: https://registry.hub.docker.com
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        cmd: /pipeline/source/CloudNative
+        tag: latest
+        repository: yangcz/CloudNative
+        registry: https://registry.hub.docker.com
