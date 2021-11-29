@@ -26,11 +26,11 @@ build:
         code: |
           cp -R ./ ${WERCKER_OUTPUT_DIR}
 
-deploy:
+# deploy:
 
-  steps:
-    - internal/docker-push:
-        username: $USERNAME
-        password: $PASSWORD
-        tag: latest
-        repository: yangcz/CloudNative
+#   steps:
+#     - internal/docker-push:
+#         username: $USERNAME
+#         password: $PASSWORD
+#         tag: latest
+#         repository: yangcz/CloudNative
