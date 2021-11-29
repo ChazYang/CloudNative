@@ -30,7 +30,7 @@ deploy:
 
   steps:
     - internal/docker-push:
-        username: $USERNAME
-        password: $PASSWORD
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
         tag: latest
         repository: yangcz/CloudNative
