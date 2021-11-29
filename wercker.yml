@@ -22,7 +22,7 @@ build:
           go build
 
     - script:
-        name: copy files to wercker output 
+        name: copy files
         code: |
           cp -R ./ ${WERCKER_OUTPUT_DIR}
 
@@ -31,8 +31,8 @@ deploy:
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
-        cmd: /pipeline/source/CloudNative
-        port: "3000"
+        # cmd: /pipeline/source/CloudNative
+        # port: "3000"
         tag: latest
         repository: yangcz/CloudNative
         registry: https://registry.hub.docker.com/v2
