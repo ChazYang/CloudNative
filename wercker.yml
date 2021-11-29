@@ -35,3 +35,4 @@ deploy:
         port: "3000"
         tag: latest
         repository: yangcz/CloudNative
+        registry: https://registry.hub.docker.com/v2
